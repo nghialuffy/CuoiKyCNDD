@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "661483473682",
+    "firebase_url": "https://readbookck.firebaseio.com",
+    "project_id": "readbookck",
+    "storage_bucket": "readbookck.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661483473682:android:fa130ea285c4d082bd81cb",
+        "android_client_info": {
+          "package_name": "com.example.doctruyenchu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661483473682-7oab4pc6cjf1cj61sks8ga857npmqmf8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doctruyenchu",
+            "certificate_hash": "242d918b873da6ad792a8b769666e6e2d8e5b778"
+          }
+        },
+        {
+          "client_id": "661483473682-kta2eofl6lnl0ht2gd47r9qbr7ghdssn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbd3yb6YhimJjZOiPebuLvn4KPnrbMLO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661483473682-kta2eofl6lnl0ht2gd47r9qbr7ghdssn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

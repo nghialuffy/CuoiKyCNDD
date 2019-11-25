@@ -13,7 +13,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Read"></activity>
         <activity android:name=".SelectChapter" />
-        <activity android:name=".AccountInfor" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

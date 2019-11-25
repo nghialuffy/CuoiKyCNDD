@@ -26,18 +26,10 @@ public class SelectChapter extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(SelectChapter.this,Read.class);
 
-                startActivityForResult(intent,REQUEST_CODE_EDIT);
+                startActivityForResult(intent,102);
             }
         });
-        mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id) {
 
-
-                Toast.makeText(SelectChapter.this, "Đã xóa", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
         btnBackHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,6 +1,8 @@
 package com.example.doctruyenchu;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,7 +71,12 @@ public class CustomAdapter<C> extends ArrayAdapter<Truyen> implements Filterable
         viewHolder.tvTruyen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("aaaaaaaaaaaaaaaaaaaaaaa"," aaaa : "+truyen.getTentruyen());
+                Truyen truyen = arrContact.get(position);
+                Intent intent = new Intent(context, SelectChapter.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("truyen",truyen);
+                intent.putExtra("package", bundle);
+                context.startActivityForResult(intent,100);
             }
         });
         return convertView;

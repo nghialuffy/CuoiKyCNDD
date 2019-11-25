@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".LoginActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@android:dimen/app_icon_size">
+
+            <ImageView
+                android:layout_width="213dp"
+                android:layout_height="232dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/ui2"></ImageView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:layout_marginBottom="10dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/widget_edittext_dark"
+                android:textColorHint="@android:color/darker_gray">
+            </EditText>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:layout_marginBottom="10dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/widget_edittext_dark"
+                android:textColorHint="@android:color/darker_gray">
+            </EditText>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_login"
+                android:layout_marginTop="20dip"
+                android:background="@color/colorPrimary"
+                android:text="Done"
+                android:textColor="@color/common_google_signin_btn_text_dark">
+            </Button>
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/progressBar"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone">
+            </ProgressBar>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

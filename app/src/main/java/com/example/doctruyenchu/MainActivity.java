@@ -24,15 +24,20 @@ public class MainActivity extends AppCompatActivity {
 
         customAdapter = new CustomAdapter<Truyen>(this, android.R.layout.simple_list_item_1, arrayList);
         lvTruyen.setAdapter(customAdapter);
-        Truyen truyen1 = new Truyen("Con meo day hai au bay",1 ,1,"");
-        arrayList.add(truyen1);
-        arrayList.add(truyen1);
+
         customAdapter.notifyDataSetChanged();
 
         dbAccess = DatabaseAccess.getInstance(this);
         dbAccess.open();
-        List<String> test = dbAccess.getData();
+        List<String> name = dbAccess.getName();
+        List<String> data = dbAccess.getData();
         dbAccess.close();
-        Log.d("aaaaaaaaaaaaaaa",test.get(0));
+        for (int i = 0; i < name.size(); i++){
+            Truyen truyen = new Truyen(name.get(i),data.get(i),1,1,"");
+            arrayList.add(truyen);
+        }
+        customAdapter.notifyDataSetChanged();
+
+
     }
 }

@@ -6,20 +6,33 @@ public class Truyen implements Serializable {
     private String tentruyen;
     private int sochuong;
     private int chuongdangdoc;
+    private String datatruyen;
     private String icon;
 
     public Truyen(){
         this.tentruyen = "";
         this.sochuong = 0;
+        this.datatruyen = "";
         this.chuongdangdoc = 0;
         this.icon = "";
     }
-    public Truyen(String tentruyen, int sochuong, int chuongdangdoc, String icon) {
+
+    public Truyen(String tentruyen, String datatruyen, int sochuong, int chuongdangdoc, String icon) {
         this.tentruyen = tentruyen;
+        this.datatruyen = datatruyen;
         this.sochuong = sochuong;
         this.chuongdangdoc = chuongdangdoc;
         this.icon = icon;
     }
+
+    public String getDatatruyen() {
+        return datatruyen;
+    }
+
+    public void setDatatruyen(String datatruyen) {
+        this.datatruyen = datatruyen;
+    }
+
 
     public String getTentruyen() {
         return tentruyen;

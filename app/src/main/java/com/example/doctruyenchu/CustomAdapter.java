@@ -72,7 +72,7 @@ public class CustomAdapter<C> extends ArrayAdapter<Truyen> implements Filterable
             @Override
             public void onClick(View view) {
                 Truyen truyen = arrContact.get(position);
-                Intent intent = new Intent(context, SelectChapter.class);
+                Intent intent = new Intent(context, Read.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("truyen",truyen);
                 intent.putExtra("package", bundle);

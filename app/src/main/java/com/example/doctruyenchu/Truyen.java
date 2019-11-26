@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 public class Truyen implements Serializable {
     private String tentruyen;
+    private String datatruyen;
     private int sochuong;
     private int chuongdangdoc;
-    private String datatruyen;
     private String icon;
 
     public Truyen(){
         this.tentruyen = "";
-        this.sochuong = 0;
         this.datatruyen = "";
+        this.sochuong = 0;
         this.chuongdangdoc = 0;
         this.icon = "";
     }

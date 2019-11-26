@@ -3,14 +3,17 @@ package com.example.doctruyenchu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ListView lvTruyen;
     CustomAdapter<Truyen> customAdapter;
     public static ArrayList<Truyen> arrayList;
+    DatabaseAccess dbAccess;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(truyen1);
         customAdapter.notifyDataSetChanged();
 
-
+        dbAccess = DatabaseAccess.getInstance(this);
+        dbAccess.open();
+        List<String> test = dbAccess.getData();
+        dbAccess.close();
+        Log.d("aaaaaaaaaaaaaaa",test.get(0));
     }
 }

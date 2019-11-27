@@ -9,34 +9,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
+
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/forward"
-            android:background="@color/cardview_light_background">
-        </ImageButton>
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/cardview_light_background"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back_icon"></ImageButton>
+
         <ImageButton
             android:id="@+id/btnHome"
-            android:layout_marginRight="50dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="50dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/home"
-            android:background="@color/cardview_light_background">
-        </ImageButton>
+            android:layout_marginRight="50dp"
+            android:background="@color/cardview_light_background"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home"></ImageButton>
+
         <ImageButton
             android:id="@+id/btnForward"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/back"
-            android:background="@color/cardview_light_background">
-        </ImageButton>
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/cardview_light_background"
+            android:scaleType="fitCenter"
+            android:src="@drawable/forward_icon"></ImageButton>
     </LinearLayout>
+
     <TextView
-        android:layout_marginTop="16dp"
+        android:id="@+id/tvContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/tvContent">
-    </TextView>
+        android:layout_gravity="top"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"></TextView>
 </LinearLayout>

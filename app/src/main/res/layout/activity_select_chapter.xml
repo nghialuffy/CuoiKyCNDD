@@ -4,14 +4,15 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
+
     <ImageButton
-        android:layout_margin="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/backHome"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
         android:background="@color/cardview_light_background"
-        android:src="@drawable/back">
-    </ImageButton>
+        android:scaleType="fitCenter"
+        android:src="@drawable/back_icon"></ImageButton>
     <ListView
         android:layout_margin="16dp"
         android:layout_width="match_parent"

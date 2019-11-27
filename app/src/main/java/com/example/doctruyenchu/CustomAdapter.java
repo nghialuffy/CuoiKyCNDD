@@ -68,6 +68,7 @@ public class CustomAdapter<C> extends ArrayAdapter<Truyen> implements Filterable
         viewHolder.tvChuong.setText(String.valueOf(truyen.getChuongdangdoc()));
 //        viewHolder.imgAvatar.setImageResource(1);
 
+        //Even Click Custom Adapter
         viewHolder.tvTruyen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +77,7 @@ public class CustomAdapter<C> extends ArrayAdapter<Truyen> implements Filterable
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("truyen",truyen);
                 intent.putExtra("package", bundle);
-                context.startActivityForResult(intent,100);
+                context.startActivity(intent);
             }
         });
         return convertView;

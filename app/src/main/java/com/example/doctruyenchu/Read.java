@@ -25,7 +25,11 @@ public class Read extends AppCompatActivity {
         mTv = (TextView) findViewById(R.id.tvContent);
 
         Intent intent = getIntent();
-        mTv.setText(intent.getStringExtra("send"));
+        Bundle bundle = intent.getBundleExtra("package");
+        Truyen truyen = (Truyen) bundle.getSerializable("truyen");
+        mTv.setText(truyen.getDatatruyen());
+
+
         mBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

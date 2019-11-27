@@ -49,7 +49,7 @@
                 android:id="@+id/btn_login"
                 android:layout_marginTop="20dip"
                 android:background="@color/colorPrimary"
-                android:text="Done"
+                android:text="Login"
                 android:textColor="@color/common_google_signin_btn_text_dark">
             </Button>
             <ProgressBar

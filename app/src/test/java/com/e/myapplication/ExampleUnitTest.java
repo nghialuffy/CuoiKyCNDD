@@ -1,4 +1,4 @@
-package com.example.doctruyenchu;
+package com.e.myapplication;
 
 import org.junit.Test;
 

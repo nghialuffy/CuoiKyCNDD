@@ -1,6 +1,5 @@
-package com.example.doctruyenchu;
+package com.e.myapplication.ui;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;

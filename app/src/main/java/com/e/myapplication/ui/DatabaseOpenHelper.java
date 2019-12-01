@@ -1,7 +1,7 @@
-package com.example.doctruyenchu;
+package com.e.myapplication.ui;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
+
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 public class DatabaseOpenHelper extends SQLiteAssetHelper {

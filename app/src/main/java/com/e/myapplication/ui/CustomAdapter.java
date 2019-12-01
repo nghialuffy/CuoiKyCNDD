@@ -1,6 +1,5 @@
-package com.example.doctruyenchu;
+package com.e.myapplication.ui;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,26 +7,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.fragment.app.FragmentActivity;
+
+import com.e.myapplication.MainActivity;
+import com.e.myapplication.R;
+import com.e.myapplication.ui.mybooks.MybooksFragment;
 
 import java.util.ArrayList;
 
 public class CustomAdapter<C> extends ArrayAdapter<Truyen> implements Filterable {
 
-    private MainActivity context;
+    private FragmentActivity context;
 
     private int resource;
     private ArrayFilter customFilter;
     private ArrayList<Truyen> arrContact;
     private ArrayList<Truyen> arrFiltered;
 
-    public CustomAdapter(MainActivity context, int resource, ArrayList<Truyen> arrContact) {
+    public CustomAdapter(FragmentActivity context, int resource, ArrayList<Truyen> arrContact) {
         super(context, resource, arrContact);
         this.context = context;
         this.resource = resource;

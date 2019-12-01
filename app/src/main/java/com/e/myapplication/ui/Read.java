@@ -1,15 +1,15 @@
-package com.example.doctruyenchu;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.e.myapplication.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.e.myapplication.MainActivity;
+import com.e.myapplication.R;
 
 public class Read extends AppCompatActivity {
 
@@ -40,7 +40,7 @@ public class Read extends AppCompatActivity {
         mBtnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Read.this,MainActivity.class);
+                Intent intent = new Intent(Read.this, MainActivity.class);
                 startActivity(intent);
             }
         });

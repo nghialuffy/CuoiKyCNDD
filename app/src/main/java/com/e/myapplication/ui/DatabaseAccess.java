@@ -55,4 +55,15 @@ public class DatabaseAccess {
         return list;
     }
 
+    public List<String> getDataEng(){
+        List<String> list = new ArrayList<>();
+        Cursor cursor = database.rawQuery("Select * from truyen",null);
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            list.add(cursor.getString(4));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
 }

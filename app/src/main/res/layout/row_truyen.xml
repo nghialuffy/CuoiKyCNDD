@@ -27,17 +27,6 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000"></TextView>
 
-        <TextView
-            android:id="@+id/edtchuong"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:fontFamily="serif"
-            android:gravity="left|center_vertical"
-            android:text="Error"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#000000"></TextView>
-
 
     </LinearLayout>
 

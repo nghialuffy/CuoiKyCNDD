@@ -22,7 +22,7 @@ public class Read extends AppCompatActivity {
 
     private ImageButton mBtnBack, mBtnHome, mBtnFordward;
     private TextView mTv;
-    private Switch switchMode;
+    private Switch switchMode, switchMode2;
     private LinearLayout llTruyen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class Read extends AppCompatActivity {
         mBtnFordward = (ImageButton) findViewById(R.id.btnForward);
         mTv = (TextView) findViewById(R.id.tvContent);
         switchMode = (Switch) findViewById(R.id.switch_id);
+        switchMode2 = (Switch) findViewById(R.id.switch_idEng);
         llTruyen = (LinearLayout) findViewById(R.id.idlayout);
 
         final Bitmap back_dark = BitmapFactory.decodeResource(getResources(), R.drawable.back_dark);
@@ -73,6 +74,24 @@ public class Read extends AppCompatActivity {
                     mBtnBack.setImageBitmap(back_light);
                     mBtnFordward.setImageBitmap(forw_light);
                     mBtnHome.setImageBitmap(home_light);
+                }
+            }
+        });
+
+        switchMode2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Intent intent = getIntent();
+                    Bundle bundle = intent.getBundleExtra("package");
+                    Truyen truyen = (Truyen) bundle.getSerializable("truyen");
+                    mTv.setText(truyen.getDatatruyenEng());
+
+                }else {
+                    Intent intent = getIntent();
+                    Bundle bundle = intent.getBundleExtra("package");
+                    Truyen truyen = (Truyen) bundle.getSerializable("truyen");
+                    mTv.setText(truyen.getDatatruyen());
                 }
             }
         });

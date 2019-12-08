@@ -36,11 +36,30 @@
             android:scaleType="fitCenter"
             android:src="@drawable/forw_light"></ImageButton>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
         <Switch
             android:id="@+id/switch_id"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Dark Mode" />
+            android:text="Dark Mode"
+            android:layout_marginRight="15dp">
+
+        </Switch>
+
+        <Switch
+            android:id="@+id/switch_idEng"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="English Mode"
+            android:layout_marginLeft="15dp">
+
+        </Switch>
     </LinearLayout>
 
 
@@ -53,6 +72,7 @@
             android:layout_height="fill_parent"
             android:layout_alignParentRight="true"
             android:layout_alignParentLeft="true"
+            android:layout_margin="16dp"
             >
 
             <TextView
@@ -66,4 +86,6 @@
         </ScrollView>
 
     </RelativeLayout>
+
+
 </LinearLayout>

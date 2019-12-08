@@ -5,13 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.e.myapplication.R;
 import com.e.myapplication.ui.CustomAdapter;
@@ -38,9 +34,11 @@ public class MybooksFragment extends Fragment {
         dbAccess.open();
         List<String> name = dbAccess.getName();
         List<String> data = dbAccess.getData();
+        List<String> dataEng = dbAccess.getDataEng();
+
         dbAccess.close();
         for (int i = 0; i < name.size(); i++){
-            Truyen truyen = new Truyen(name.get(i),data.get(i),1,1,"");
+            Truyen truyen = new Truyen(name.get(i),data.get(i),"",dataEng.get(i),1,1,"");
             arrayList.add(truyen);
         }
         customAdapter.notifyDataSetChanged();

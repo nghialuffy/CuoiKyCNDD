@@ -60,14 +60,13 @@ public class CustomAdapter<C> extends ArrayAdapter<Truyen> implements Filterable
             viewHolder = new ViewHolder();
             viewHolder.imgAvatar = convertView.findViewById(R.id.imgtruyen);
             viewHolder.tvTruyen = convertView.findViewById(R.id.edttentruyen);
-            viewHolder.tvChuong = convertView.findViewById(R.id.edtchuong);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
         viewHolder.tvTruyen.setText(truyen.getTentruyen());
-        viewHolder.tvChuong.setText(String.valueOf(truyen.getChuongdangdoc()));
+//        viewHolder.tvChuong.setText(String.valueOf(truyen.getChuongdangdoc()));
 //        viewHolder.imgAvatar.setImageResource(1);
 
         //Even Click Custom Adapter

@@ -5,6 +5,8 @@ import java.io.Serializable;
 public class Truyen implements Serializable {
     private String tentruyen;
     private String datatruyen;
+    private String tentruyenEng;
+    private String datatruyenEng;
     private int sochuong;
     private int chuongdangdoc;
     private String icon;
@@ -12,17 +14,37 @@ public class Truyen implements Serializable {
     public Truyen(){
         this.tentruyen = "";
         this.datatruyen = "";
+        this.tentruyenEng="";
+        this.datatruyenEng="";
         this.sochuong = 0;
         this.chuongdangdoc = 0;
         this.icon = "";
     }
 
-    public Truyen(String tentruyen, String datatruyen, int sochuong, int chuongdangdoc, String icon) {
+    public Truyen(String tentruyen, String datatruyen, String tentruyenEng, String datatruyenEng, int sochuong, int chuongdangdoc, String icon) {
         this.tentruyen = tentruyen;
         this.datatruyen = datatruyen;
+        this.tentruyenEng = tentruyenEng;
+        this.datatruyenEng = datatruyenEng;
         this.sochuong = sochuong;
         this.chuongdangdoc = chuongdangdoc;
         this.icon = icon;
+    }
+
+    public String getTentruyenEng() {
+        return tentruyenEng;
+    }
+
+    public void setTentruyenEng(String tentruyenEng) {
+        this.tentruyenEng = tentruyenEng;
+    }
+
+    public String getDatatruyenEng() {
+        return datatruyenEng;
+    }
+
+    public void setDatatruyenEng(String datatruyenEng) {
+        this.datatruyenEng = datatruyenEng;
     }
 
     public String getDatatruyen() {

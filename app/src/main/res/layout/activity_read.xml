@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/idlayout"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_margin="16dp">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
             android:layout_height="50dp"
             android:background="@color/cardview_light_background"
             android:scaleType="fitCenter"
-            android:src="@drawable/back_icon"></ImageButton>
+            android:src="@drawable/back_light"></ImageButton>
 
         <ImageButton
             android:id="@+id/btnHome"
@@ -26,7 +26,7 @@
             android:layout_marginRight="50dp"
             android:background="@color/cardview_light_background"
             android:scaleType="fitCenter"
-            android:src="@drawable/home"></ImageButton>
+            android:src="@drawable/home_light"></ImageButton>
 
         <ImageButton
             android:id="@+id/btnForward"
@@ -34,14 +34,36 @@
             android:layout_height="50dp"
             android:background="@color/cardview_light_background"
             android:scaleType="fitCenter"
-            android:src="@drawable/forward_icon"></ImageButton>
+            android:src="@drawable/forw_light"></ImageButton>
+
+        <Switch
+            android:id="@+id/switch_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Dark Mode" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvContent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="top"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp"></TextView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            >
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:singleLine="false"
+                android:text="center chat"
+                android:textSize="18sp"></TextView>
+        </ScrollView>
+
+    </RelativeLayout>
 </LinearLayout>

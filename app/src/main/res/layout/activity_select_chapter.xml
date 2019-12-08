@@ -12,7 +12,7 @@
         android:layout_margin="5dp"
         android:background="@color/cardview_light_background"
         android:scaleType="fitCenter"
-        android:src="@drawable/back_icon"></ImageButton>
+        android:src="@drawable/back_light"></ImageButton>
     <ListView
         android:layout_margin="16dp"
         android:layout_width="match_parent"

@@ -12,29 +12,34 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.e.myapplication.MainActivity;
 import com.e.myapplication.R;
+import com.e.myapplication.ui.mybooks.MybooksFragment;
 
 public class Read extends AppCompatActivity {
 
-    private ImageButton mBtnBack, mBtnHome, mBtnFordward;
-    private TextView mTv;
+    private ImageButton mBtnBack, mBtnFordward;
+    private TextView mTv, tvNameTruyen;
     private Switch switchMode, switchMode2;
     private LinearLayout llTruyen;
+    private Integer id;
+    private Truyen truyen;
+    private String nameTruyen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
         mBtnBack = (ImageButton) findViewById(R.id.btnBack);
-        mBtnHome = (ImageButton) findViewById(R.id.btnHome);
         mBtnFordward = (ImageButton) findViewById(R.id.btnForward);
         mTv = (TextView) findViewById(R.id.tvContent);
         switchMode = (Switch) findViewById(R.id.switch_id);
         switchMode2 = (Switch) findViewById(R.id.switch_idEng);
         llTruyen = (LinearLayout) findViewById(R.id.idlayout);
+        tvNameTruyen = (TextView) findViewById(R.id.nametruyen);
 
         final Bitmap back_dark = BitmapFactory.decodeResource(getResources(), R.drawable.back_dark);
         final Bitmap forw_dark = BitmapFactory.decodeResource(getResources(), R.drawable.forw_dark);
@@ -49,31 +54,37 @@ public class Read extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("package");
-        Truyen truyen = (Truyen) bundle.getSerializable("truyen");
+        truyen = (Truyen) bundle.getSerializable("truyen");
+        id = (Integer) bundle.getSerializable("id");
+        tvNameTruyen.setText(truyen.getTentruyen());
         mTv.setText(truyen.getDatatruyen());
+
 
         mTv.setTextColor(getColor(R.color.colorWordLight));
         llTruyen.setBackgroundColor(Color.parseColor("#ffffff"));
         mBtnBack.setImageBitmap(back_light);
         mBtnFordward.setImageBitmap(forw_light);
-        mBtnHome.setImageBitmap(home_light);
 
         switchMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     mTv.setTextColor(getColor(R.color.colorWordDark));
+                    tvNameTruyen.setTextColor(getColor(R.color.colorWordDark));
+                    switchMode.setTextColor(getColor(R.color.colorWordDark));
+                    switchMode2.setTextColor(getColor(R.color.colorWordDark));
                     llTruyen.setBackgroundColor(Color.parseColor("#000000"));
                     mBtnBack.setImageBitmap(back_dark);
                     mBtnFordward.setImageBitmap(forw_dark);
-                    mBtnHome.setImageBitmap(home_dark);
 
                 }else {
                     mTv.setTextColor(getColor(R.color.colorWordLight));
+                    tvNameTruyen.setTextColor(getColor(R.color.colorWordLight));
+                    switchMode.setTextColor(getColor(R.color.colorWordLight));
+                    switchMode2.setTextColor(getColor(R.color.colorWordLight));
                     llTruyen.setBackgroundColor(Color.parseColor("#ffffff"));
                     mBtnBack.setImageBitmap(back_light);
                     mBtnFordward.setImageBitmap(forw_light);
-                    mBtnHome.setImageBitmap(home_light);
                 }
             }
         });
@@ -82,15 +93,9 @@ public class Read extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    Intent intent = getIntent();
-                    Bundle bundle = intent.getBundleExtra("package");
-                    Truyen truyen = (Truyen) bundle.getSerializable("truyen");
                     mTv.setText(truyen.getDatatruyenEng());
 
                 }else {
-                    Intent intent = getIntent();
-                    Bundle bundle = intent.getBundleExtra("package");
-                    Truyen truyen = (Truyen) bundle.getSerializable("truyen");
                     mTv.setText(truyen.getDatatruyen());
                 }
             }
@@ -99,21 +104,30 @@ public class Read extends AppCompatActivity {
         mBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Read.this,SelectChapter.class);
-                startActivity(intent);
+                if(id > 0){
+                    id-=1;
+                    truyen = (Truyen) MybooksFragment.arrayList.get(id);
+                    tvNameTruyen.setText(truyen.getTentruyen());
+                    mTv.setText(truyen.getDatatruyen());
+                }
+                else{
+                    Toast.makeText(Read.this,"Đây là chương đầu",Toast.LENGTH_SHORT).show();
+                }
             }
         });
-        mBtnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Read.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
         mBtnFordward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //kiem tra cuoi chuong chua?
+                if(id < MybooksFragment.arrayList.size() - 1){
+                    id +=1;
+                    truyen = (Truyen) MybooksFragment.arrayList.get(id);
+                    tvNameTruyen.setText(truyen.getTentruyen());
+                    mTv.setText(truyen.getDatatruyen());
+                }
+                else{
+                    Toast.makeText(Read.this,"Đây là chương cuối",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

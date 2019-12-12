@@ -20,14 +20,17 @@ import java.util.List;
 public class MybooksFragment extends Fragment {
 
     private MybooksViewModel myBooksFragment;
-    DatabaseAccess dbAccess;
+    public DatabaseAccess dbAccess;
+    public static ArrayList<Truyen> arrayList;
+    private ListView lv;
+    private CustomAdapter<Truyen> customAdapter;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_books, container, false);
 
-        ArrayList<Truyen> arrayList = new ArrayList<Truyen>();
-        ListView lv = (ListView)rootView.findViewById(R.id.lvTruyen);
-        CustomAdapter<Truyen> customAdapter = new CustomAdapter<Truyen>(getActivity(), android.R.layout.simple_list_item_1, arrayList);
+        arrayList = new ArrayList<Truyen>();
+        lv = (ListView)rootView.findViewById(R.id.lvTruyen);
+        customAdapter = new CustomAdapter<Truyen>(getActivity(), android.R.layout.simple_list_item_1, arrayList);
         dbAccess = DatabaseAccess.getInstance(getActivity());
 
         // Doc truyen tu database

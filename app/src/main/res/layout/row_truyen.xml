@@ -20,11 +20,14 @@
         <TextView
             android:id="@+id/edttentruyen"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="57dp"
             android:layout_marginLeft="10dp"
+            android:accessibilityLiveRegion="none"
             android:fontFamily="serif"
+            android:foregroundGravity="center_vertical"
             android:text="Error"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_centerInParent="true"
             android:textColor="#000000"></TextView>
 
 

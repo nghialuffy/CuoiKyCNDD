@@ -77,6 +77,7 @@ public class CustomAdapter<C> extends ArrayAdapter<Truyen> implements Filterable
                 Intent intent = new Intent(context, Read.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("truyen",truyen);
+                bundle.putSerializable("id", position);
                 intent.putExtra("package", bundle);
                 context.startActivity(intent);
             }

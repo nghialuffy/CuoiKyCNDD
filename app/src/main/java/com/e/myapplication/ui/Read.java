@@ -94,9 +94,10 @@ public class Read extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     mTv.setText(truyen.getDatatruyenEng());
-
+                    tvNameTruyen.setText(truyen.getTentruyenEng());
                 }else {
                     mTv.setText(truyen.getDatatruyen());
+                    tvNameTruyen.setText(truyen.getTentruyen());
                 }
             }
         });

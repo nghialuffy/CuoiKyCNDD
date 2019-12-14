@@ -66,4 +66,16 @@ public class DatabaseAccess {
         cursor.close();
         return list;
     }
+
+    public List<String> getNameEng(){
+        List<String> list = new ArrayList<>();
+        Cursor cursor = database.rawQuery("Select * from truyen",null);
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            list.add(cursor.getString(3));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
 }
